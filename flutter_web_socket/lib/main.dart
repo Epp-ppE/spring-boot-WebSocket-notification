@@ -40,7 +40,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController _controller = TextEditingController();
-  final _channel = createWebSocketChannel('ws://localhost:8080/ws/message/earth');
+  final _channel = createWebSocketChannel('ws://localhost:8080/ws/message/Pitbull_named_Universe_Destroyer');
   // final _channel = WebSocketChannel.connect(
   //   Uri.parse('wss://localhost:8080/ws/message/earth'),
   // );
