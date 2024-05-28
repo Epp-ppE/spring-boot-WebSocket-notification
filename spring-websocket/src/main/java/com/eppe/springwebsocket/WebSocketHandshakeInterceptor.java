@@ -23,7 +23,6 @@ public class WebSocketHandshakeInterceptor implements HandshakeInterceptor {
             return false; // Return false to indicate the handshake should not proceed
         }
 
-        // Optionally, store the ID in the attributes map for use in the WebSocket session
         attributes.put("id", id);
 
         // Allow the handshake to proceed
@@ -33,7 +32,6 @@ public class WebSocketHandshakeInterceptor implements HandshakeInterceptor {
     @Override
     public void afterHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler wsHandler,
                                Exception exception) {
-        // No-op (you can implement any post-handshake logic here if needed)
     }
 
     private String getIdFromUri(String uri) {
