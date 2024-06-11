@@ -35,7 +35,7 @@ public class WebSocketController {
         var connection = MessageWebSocketHandler.connectionMap.get(req.toUserId);
 
         if (connection == null)
-            return new ResponseEntity<String>("User not connected", null, 404);
+            return new ResponseEntity<String>("This user is not connected.", null, 404);
 
         connection.sendMessage(new TextMessage(req.message));
 

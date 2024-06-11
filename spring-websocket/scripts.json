@@ -1,0 +1,14 @@
+{
+    "$schema": "https://deno.land/x/denon@2.5.0/schema.json",
+    "scripts": {
+        "start": {
+            "cmd": "gradle bootRun",
+            "desc": "run main class"
+        }
+    },
+    "watcher": {
+        "exts": [
+            "java"
+        ]
+    }
+}

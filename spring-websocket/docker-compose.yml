@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+    dev:
+        image: gradle:jdk21
+        working_dir: /root/app
+        entrypoint: bash -c "if ! command -v deno &> /dev/null ; then apt update && apt install unzip && curl -fsSL https://deno.land/x/install/install.sh | sh; fi && if ! command -v denon &> /dev/null ; then deno install -qAf --unstable https://deno.land/x/denon/denon.ts; fi && denon start"
+        tty: true
+        volumes:
+            - .:/root/app
+            - deno:/root/.deno
+        tmpfs:
+            - /root/app/target
+        ports:
+            - 8765:8080
+        restart: unless-stopped
+        environment:
+            - PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.deno/bin
+
+volumes:
+    deno:
+      external: true
