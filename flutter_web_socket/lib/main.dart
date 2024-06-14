@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:web_socket_channel/web_socket_channel.dart'; // Use the web implementation
+import 'package:web_socket_channel/web_socket_channel.dart';
+ // Use the web implementation
 
 import 'utils/websocket_channel_stub.dart'
   if (dart.library.io) 'utils/websocket_channel_io.dart'
@@ -40,7 +41,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController _controller = TextEditingController();
-  final _channel = createWebSocketChannel('ws://localhost:1324/ws/message/Pitbull_named_Universe_Destroyer');
+  final _channel = createWebSocketChannel('ws://${html.window.location.host}/ws/message/Pitbull_named_Universe_Destroyer');
   // final _channel = WebSocketChannel.connect(
   //   Uri.parse('wss://localhost:8080/ws/message/earth'),
   // );
